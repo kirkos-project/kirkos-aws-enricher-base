@@ -2,5 +2,9 @@ pipeline:
   run-unit-tests:
     image: timberio/vector:0.60.0-debian
     commands:
+      # Install gettext to be able to use envsubst
+      - apt-get update
+      - apt-get install gettext-base
+      # Run unit tests
       - chmod +x ./tests/run_tests.sh
       - ./tests/run_tests.sh 

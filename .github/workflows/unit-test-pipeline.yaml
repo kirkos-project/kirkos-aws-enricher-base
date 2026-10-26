@@ -24,7 +24,7 @@ jobs:
           apt-get update
           apt-get install gettext-base
 
-      - name: Run Unit Tests
+      - name: Run unit tests
         run: |
           chmod +x ./tests/run_tests.sh
           ./tests/run_tests.sh 
