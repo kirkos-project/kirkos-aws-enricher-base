@@ -19,8 +19,8 @@ unset LISTENER_IP LISTENER_PORT
 # ============== Unit test substitution ============== #
 # Strip out newlines and whitespace. 
 # Otherwise Vector will process line-by-line and fail due to incomplete JSON.
-export CLOUDTRAIL_SINGLE_LOG=$(cat tests/payloads/cloudtrail_records_array.json | tr -d "\n\r")
-export CLOUDTRAIL_RECORDS_ARRAY=$(cat tests/payloads/cloudtrail_single_log.json | tr -d "\n\r")
+export CLOUDTRAIL_SINGLE_LOG=$(cat tests/payloads/cloudtrail_single_log.json | tr -d "\n\r")
+export CLOUDTRAIL_RECORDS_ARRAY=$(cat tests/payloads/cloudtrail_records_array.json | tr -d "\n\r")
 export GUARDDUTY_RAW_LOG=$(cat tests/payloads/guardduty_raw_log.json | tr -d "\n\r")
 export GUARDDUTY_EVENTBRIDGE_LOG=$(cat tests/payloads/guardduty_eventbridge_log.json | tr -d "\n\r")
 export GUARDDUTY_FINDINGS_ARRAY=$(cat tests/payloads/guardduty_findings_array.json | tr -d "\n\r")
