@@ -26,7 +26,7 @@ export GUARDDUTY_EVENTBRIDGE_LOG=$(cat tests/payloads/guardduty_eventbridge_log.
 export GUARDDUTY_FINDINGS_ARRAY=$(cat tests/payloads/guardduty_findings_array.json | tr -d "\n\r")
 
 # Create a temporary directory to house test files.
-TEMP_TEST_DIR=$(mktemp -d -t kirkos_unit_tests.XXXXXXXXXX)
+TEMP_TEST_DIR=$(mktemp -d -t kirkos_aws_enricher_unit_tests.XXXXXXXXXX)
 for test_file in tests/*.yaml; do
   filename=$(basename "$test_file")
   envsubst < "$test_file" > "$TEMP_TEST_DIR/$filename"
