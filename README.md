@@ -10,3 +10,11 @@ There are several industry standards for log normalisation, e.g., Elastic Common
 
 Based on these identified shortcomings, we instead add a custom private field. This retains the original log format and ensures that existing detection rules continue working regardless of platform. The new field simply enables additional rules.
 
+## Setup and test
+
+Even though this repo is intended to be part of a larger pipeline, it can be tested independently. To do this: 
+
+* Install Vector following the instructions [here](https://vector.dev/docs/setup/installation/).
+* Run `./tests/run_tests.sh`.
+
+If you would like to test your own AWS logs, place the log files into the `tests/payloads` folder, and then add a corresponding test YAML file within `tests` (follow the pattern of the existing YAML files). Note that the JSON files are converted to single line strings within `run_tests.sh`, so you will either need to follow the same pattern (using environment substitution) or provide the log as a single-line JSON file.
