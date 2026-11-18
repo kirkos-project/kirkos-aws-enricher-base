@@ -2,6 +2,12 @@
 acknowledgements:
   enabled: true
 
+# Isolate Vector's system metadata.
+# Without this, fields such as `timestamp` get written by Vector as a top-level field 
+# to the output object, which risks conflicts.
+schema:
+  log_namespace: true
+
 sources:
   aws_input:
     type: 'vector'
